@@ -1,60 +1,87 @@
-# ðŸ¦œ LangChain: Chat with SQL DB
+# 🚀 Chat with SQL using LLM
 
-An interactive Streamlit web application that enables users to chat with their SQL databases using natural language. Powered by LangChain, Groq's high-speed LLMs (Llama 3), and an AI-driven SQL Agent, this tool converts your conversational questions into executable SQL queries, runs them against your database, and returns the answers in plain English.
+[![Live Demo - Try it Now!](https://img.shields.io/badge/Live%20Demo-Streamlit-brightgreen?logo=streamlit&labelColor=black)](https://chat-with-sql-using-llm-hxaeb27juug2h2uuh6x6pb.streamlit.app/)
 
-## âœ¨ Features
-- **Natural Language to SQL**: Ask questions in plain English and let the AI write and execute the SQL queries.
-- **Local & Remote Database Support**: 
-  - Effortlessly query the included local SQLite database (`student.db`).
-  - Dynamically connect to a remote MySQL database by providing host, user, and password via the UI.
-- **High-Speed AI**: Utilizes Groq's blazing-fast inference with the `llama-3.3-70b-versatile` model.
-- **Chat History**: Maintains a conversational memory during your session so you can ask follow-up questions.
-- **Transparent Execution**: The LangChain SQL Agent dynamically explores table schemas and structures before formulating queries to ensure accurate results.
+An interactive Streamlit application that lets you chat with SQLite and MySQL databases using natural language. Powered by [LangChain](https://www.langchain.com/), Groq's blazing-fast Llama 3 LLMs, and AI-driven SQL agents.
 
-## ðŸ› ï¸  Prerequisites
+---
+
+## ✨ Features
+
+- **Natural Language to SQL:** Ask questions in plain English—AI writes and executes the SQL queries for you.
+- **Works with Both SQLite & MySQL:** Query the included demo SQLite (`student.db`) or connect to your own MySQL server via the UI.
+- **High-Speed / Low-Latency:** Leverages Groq's `llama-3-70b` for lightning-fast responses.
+- **Conversational Memory:** Maintains chat context so you can ask follow-up questions.
+- **Schema-Aware Agent:** Automatically inspects your DB schema to generate safe and accurate queries.
+- **No Local Setup Required:** Try it instantly with the [Live Demo](https://chat-with-sql-using-llm-hxaeb27juug2h2uuh6x6pb.streamlit.app/).
+
+---
+
+## 🖥️ Live Demo
+
+👉 **[Launch the App Now on Streamlit Cloud! 🚀](https://chat-with-sql-using-llm-hxaeb27juug2h2uuh6x6pb.streamlit.app/)**
+
+> No setup needed! Try chatting with the sample database immediately.
+
+---
+
+## 🛠️ Local Installation
+
+**Prerequisites**
 - Python 3.10+
-- A valid [Groq API Key](https://console.groq.com/keys)
+- A [Groq API Key](https://console.groq.com/keys) (free signup)
 
-## ðŸš€ Installation & Setup
+**Step-by-step:**
 
-1. **Clone the repository** (if you haven't already):
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/ChatWithSQL-App.git
-   cd ChatWithSQL-App
-   ```
+1. **Clone this repo**
+    ```bash
+    git clone https://github.com/sarthakk-sood/Chat-with-SQL-using-LLM.git
+    cd Chat-with-SQL-using-LLM
+    ```
+2. **(Recommended) Create and activate a virtual environment**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate # (or `venv\Scripts\activate` on Windows)
+    ```
+3. **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    # OR if not present:
+    pip install streamlit langchain langchain-community langchain-groq sqlalchemy python-dotenv mysql-connector-python
+    ```
+4. **Add your Groq API key**
+    - Create a `.env` file in the project root:
+      ```
+      GROQ_API_KEY="gsk_your_actual_api_key_here"
+      ```
 
-2. **Set up a virtual environment** (Recommended):
-   ```bash
-   conda create -p langenv python=3.11 -y
-   conda activate ./langenv
-   ```
+---
 
-3. **Install dependencies**:
-   Make sure you have the required libraries installed. You can install them via pip:
-   ```bash
-   pip install streamlit langchain langchain-community langchain-groq sqlalchemy python-dotenv mysql-connector-python
-   ```
+## ▶️ Usage
 
-4. **Configure your Environment Variables**:
-   Create a `.env` file in the root of the project directory and add your Groq API key:
-   ```env
-   GROQ_API_KEY="gsk_your_actual_api_key_here"
-   ```
+1. **Start the Streamlit app:**
+    ```bash
+    streamlit run app.py
+    ```
 
-## ðŸ’» Usage
+2. **Open your browser at the printed URL** (usually [http://localhost:8501](http://localhost:8501)).
 
-Run the Streamlit application from your terminal:
+3. **Connect to a database:**
+    - Choose between the local SQLite demo or your own MySQL.
+    - For MySQL, enter your host/user/password.
 
-```bash
-streamlit run app.py
-```
+4. **Ask questions!**
+    - Example: "Show all students in Data Science."
+    - Example: "Which student scored highest?"
 
-1. Open the local URL provided by Streamlit (usually `http://localhost:8501`).
-2. Select your database source from the sidebar (Local SQLite or MySQL).
-3. Start asking questions like *"Which student has the highest marks?"* or *"How many students are in the Data Science course?"*
+---
 
-## ðŸ› ï¸  Built With
-- [Streamlit](https://streamlit.io/) - Front-end web framework
-- [LangChain](https://www.langchain.com/) - LLM orchestration and Agent toolkit
-- [Groq](https://groq.com/) - Lightning-fast inference engine
-- [SQLAlchemy](https://www.sqlalchemy.org/) - Database connection modeling
+## 🏗️ Built With
+
+- [Streamlit](https://streamlit.io/) — Web UI
+- [LangChain](https://www.langchain.com/) — LLM orchestration & SQL agent
+- [Groq](https://groq.com/) — Llama 3 LLM backend
+- [SQLAlchemy](https://www.sqlalchemy.org/) — SQL database toolkit
+
+---
+
